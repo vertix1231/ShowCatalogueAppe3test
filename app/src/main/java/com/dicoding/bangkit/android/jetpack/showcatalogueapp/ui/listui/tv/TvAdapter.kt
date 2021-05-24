@@ -7,21 +7,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.ItemRowFilm2Binding
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.detail.DetailActivity
-import com.topanlabs.filmtopan.data.ResultX
+import com.topanlabs.filmtopan.data.TvshowResultResponses
 
 
 
 class TvAdapter : RecyclerView.Adapter<TvAdapter.TvViewHolder>() {
-    private val listFilms = ArrayList<ResultX>()
+    private val listFilms = ArrayList<TvshowResultResponses>()
 
-    fun setData(listFilms: List<ResultX>) {
+    fun setData(listFilms: List<TvshowResultResponses>) {
         this.listFilms.clear()
         this.listFilms.addAll(listFilms)
         notifyDataSetChanged()
     }
 
     class TvViewHolder(private val binding: ItemRowFilm2Binding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(tv: ResultX) {
+        fun bind(tv: TvshowResultResponses) {
             with(binding) {
                 tvYear.text = tv.firstAirDate.subSequence(0, 4)
                 Glide

@@ -3,12 +3,13 @@ package com.topanlabs.filmtopan.data
 
 import com.google.gson.annotations.SerializedName
 
-data class RatingFilmData(
+data class RatingMovieData(
     @SerializedName("id")
     val id: Int,
-    @SerializedName("results")
+    @SerializedName("movieResultResponses")
     val results: List<Result>
 ) {
+
     data class Result(
         @SerializedName("iso_3166_1")
         val iso31661: String,

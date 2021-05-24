@@ -1,4 +1,4 @@
-package com.topanlabs.filmtopan
+package com.dicoding.bangkit.android.jetpack.showcatalogueapp
 
 import android.app.Application
 import com.topanlabs.filmtopan.di.Koin.appModule

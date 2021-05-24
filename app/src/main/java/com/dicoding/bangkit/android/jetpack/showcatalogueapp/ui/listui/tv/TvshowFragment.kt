@@ -10,8 +10,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.FragmentTvshowBinding
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.listui.ListViewModel
-import com.topanlabs.filmtopan.data.ResultX
-import com.topanlabs.filmtopan.data.TmTvHead
+import com.topanlabs.filmtopan.data.TvshowResultResponses
+import com.topanlabs.filmtopan.data.TvShowHead
 import com.topanlabs.filmtopan.utils.Status
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -51,8 +51,8 @@ class TvshowFragment : Fragment() {
                         // recyclerView.visibility = View.VISIBLE
                         binding.progressBar.visibility = View.GONE
                         resource.data?.let { results ->
-                            results as TmTvHead
-                            updateData(results.results)
+                            results as TvShowHead
+                            updateData(results.tvshowResults)
                         }
                     }
                     Status.ERROR -> {
@@ -69,8 +69,8 @@ class TvshowFragment : Fragment() {
         })
     }
 
-    private fun updateData(results: List<ResultX>) {
+    private fun updateData(tvshowResults: List<TvshowResultResponses>) {
         binding.recView.adapter = adapter
-        adapter.setData(results)
+        adapter.setData(tvshowResults)
     }
 }

@@ -9,9 +9,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.ActivityDetailBinding
-import com.topanlabs.filmtopan.data.FilmDetailData
+import com.topanlabs.filmtopan.data.MovieDetailData
 import com.topanlabs.filmtopan.data.TvDetailData
-import com.topanlabs.filmtopan.db.ArtEntity
+import com.topanlabs.filmtopan.db.ShowtaimentEntity
 import com.topanlabs.filmtopan.utils.Status
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -48,9 +48,9 @@ class DetailActivity : AppCompatActivity() {
                     it?.let { resource ->
                         when (resource.status) {
                             Status.SUCCESS -> {
-                                val data = resource.data as FilmDetailData
+                                val data = resource.data as MovieDetailData
                                 binding.floatingActionButton.setOnClickListener {
-                                    val artEntity = ArtEntity(
+                                    val artEntity = ShowtaimentEntity(
                                         id = data.id,
                                         title = data.originalTitle,
                                         photo = "https://image.tmdb.org/t/p/original/${data.posterPath}",
@@ -132,7 +132,7 @@ class DetailActivity : AppCompatActivity() {
 
                                 val data = resource.data as TvDetailData
                                 binding.floatingActionButton.setOnClickListener {
-                                    val artEntity = ArtEntity(
+                                    val artEntity = ShowtaimentEntity(
                                         id = data.id,
                                         title = data.originalName,
                                         photo = "https://image.tmdb.org/t/p/original/${data.posterPath}",

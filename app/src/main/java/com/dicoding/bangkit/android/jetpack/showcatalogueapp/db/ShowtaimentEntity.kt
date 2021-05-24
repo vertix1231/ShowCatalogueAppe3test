@@ -4,8 +4,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity(tableName = ArtDao.TABLE_NAME)
-data class ArtEntity(
+@Entity(tableName = ShowtaimentDao.TABLE_NAME)
+data class ShowtaimentEntity(
     @PrimaryKey
     val id: Int,
     val title: String,

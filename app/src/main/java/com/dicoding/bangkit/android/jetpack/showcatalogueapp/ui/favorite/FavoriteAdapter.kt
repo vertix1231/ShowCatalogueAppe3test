@@ -10,29 +10,29 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.ItemRowFilm2Binding
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.detail.DetailActivity
-import com.topanlabs.filmtopan.db.ArtEntity
+import com.topanlabs.filmtopan.db.ShowtaimentEntity
 
 
-class FavoriteAdapter : PagedListAdapter<ArtEntity, FavoriteAdapter.FavoriteViewHolder>(
+class FavoriteAdapter : PagedListAdapter<ShowtaimentEntity, FavoriteAdapter.FavoriteViewHolder>(
     DIFF_CALLBACK
 ) {
-    private val list = ArrayList<ArtEntity>()
+    private val list = ArrayList<ShowtaimentEntity>()
 
     companion object {
-        private val DIFF_CALLBACK: DiffUtil.ItemCallback<ArtEntity> =
-            object : DiffUtil.ItemCallback<ArtEntity>() {
-                override fun areItemsTheSame(oldArt: ArtEntity, newArt: ArtEntity): Boolean {
-                    return oldArt.id == newArt.id
+        private val DIFF_CALLBACK: DiffUtil.ItemCallback<ShowtaimentEntity> =
+            object : DiffUtil.ItemCallback<ShowtaimentEntity>() {
+                override fun areItemsTheSame(oldShowtaiment: ShowtaimentEntity, newShowtaiment: ShowtaimentEntity): Boolean {
+                    return oldShowtaiment.id == newShowtaiment.id
                 }
 
                 @SuppressLint("DiffUtilEquals")
-                override fun areContentsTheSame(oldArt: ArtEntity, newArt: ArtEntity): Boolean {
-                    return oldArt == newArt
+                override fun areContentsTheSame(oldShowtaiment: ShowtaimentEntity, newShowtaiment: ShowtaimentEntity): Boolean {
+                    return oldShowtaiment == newShowtaiment
                 }
             }
     }
 
-    fun setData(list: List<ArtEntity>) {
+    fun setData(list: List<ShowtaimentEntity>) {
         this.list.clear()
         this.list.addAll(list)
         notifyDataSetChanged()
@@ -40,7 +40,7 @@ class FavoriteAdapter : PagedListAdapter<ArtEntity, FavoriteAdapter.FavoriteView
 
     class FavoriteViewHolder(private val binding: ItemRowFilm2Binding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: ArtEntity) {
+        fun bind(item: ShowtaimentEntity) {
             with(binding) {
                 tvYear.text = item.year
                 Glide

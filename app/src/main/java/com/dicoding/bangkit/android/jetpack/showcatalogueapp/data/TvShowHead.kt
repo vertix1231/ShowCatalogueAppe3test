@@ -3,11 +3,11 @@ package com.topanlabs.filmtopan.data
 
 import com.google.gson.annotations.SerializedName
 
-data class TmHead(
+data class TvShowHead(
     @SerializedName("page")
     val page: Int,
-    @SerializedName("results")
-    val results: List<Result>,
+    @SerializedName("movieResultResponses")
+    val tvshowResults: List<TvshowResultResponses>,
     @SerializedName("total_pages")
     val totalPages: Int,
     @SerializedName("total_results")

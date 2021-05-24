@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagedList
 import com.topanlabs.filmtopan.data.DataRepository
-import com.topanlabs.filmtopan.data.RatingData
-import com.topanlabs.filmtopan.data.RatingFilmData
-import com.topanlabs.filmtopan.db.ArtEntity
+import com.topanlabs.filmtopan.data.RatingTvshowData
+import com.topanlabs.filmtopan.data.RatingMovieData
+import com.topanlabs.filmtopan.db.ShowtaimentEntity
 import com.topanlabs.filmtopan.utils.EspressoIdlingResource
 import com.topanlabs.filmtopan.utils.Resource
 import kotlinx.coroutines.launch
@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 class DetailViewModel(val repository: DataRepository, val espresso: EspressoIdlingResource) : ViewModel() {
     val selectedFilm = MutableLiveData<Resource<Any>>()
     val selectedTv = MutableLiveData<Resource<Any>>()
-    fun allLikedArts(type: String): LiveData<PagedList<ArtEntity>> = repository.allLikedArts(type)
+    fun allLikedArts(type: String): LiveData<PagedList<ShowtaimentEntity>> = repository.allLikedArts(type)
 
     suspend fun isLiked(id: Int): Boolean {
         val count: Int = repository.searchArt(id)
@@ -65,7 +65,7 @@ class DetailViewModel(val repository: DataRepository, val espresso: EspressoIdli
 
     suspend fun getFilmRating(movieID: Int): String {
         espresso.increment()
-        lateinit var response: RatingFilmData
+        lateinit var response: RatingMovieData
         var rating = "N/A"
         try {
             response = repository.getFilmRating(movieID)
@@ -82,7 +82,7 @@ class DetailViewModel(val repository: DataRepository, val espresso: EspressoIdli
 
     suspend fun getTvRating(tvID: Int): String {
         espresso.increment()
-        lateinit var response: RatingData
+        lateinit var response: RatingTvshowData
         var rating = "N/A"
         try {
             response = repository.getTvRating(tvID)
@@ -94,18 +94,18 @@ class DetailViewModel(val repository: DataRepository, val espresso: EspressoIdli
 
     }
 
-    fun insert(artEntity: ArtEntity) {
+    fun insert(showtaimentEntity: ShowtaimentEntity) {
         espresso.increment()
         viewModelScope.launch {
-            repository.insert(artEntity)
+            repository.insert(showtaimentEntity)
             espresso.decrement()
         }
     }
 
-    fun delete(artEntity: ArtEntity) {
+    fun delete(showtaimentEntity: ShowtaimentEntity) {
         espresso.increment()
         viewModelScope.launch {
-            repository.delete(artEntity)
+            repository.delete(showtaimentEntity)
             espresso.decrement()
         }
     }

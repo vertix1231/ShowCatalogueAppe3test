@@ -10,8 +10,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.FragmentMovieBinding
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.listui.ListViewModel
-import com.topanlabs.filmtopan.data.Result
-import com.topanlabs.filmtopan.data.TmHead
+import com.topanlabs.filmtopan.data.MovieResultResponses
+import com.topanlabs.filmtopan.data.MovieHead
 import com.topanlabs.filmtopan.utils.Status
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -20,7 +20,7 @@ class MovieFragment : Fragment() {
 
     private lateinit var binding: FragmentMovieBinding
     val viewModel: ListViewModel by sharedViewModel()
-    var adapter = FilmAdapter()
+    var adapter = MovieAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,8 +54,8 @@ class MovieFragment : Fragment() {
                         // recyclerView.visibility = View.VISIBLE
                         binding.progressBar.visibility = View.GONE
                         resource.data?.let { results ->
-                            results as TmHead
-                            updateData(results.results)
+                            results as MovieHead
+                            updateData(results.movieResultResponses)
                         }
                     }
                     Status.ERROR -> {
@@ -72,8 +72,8 @@ class MovieFragment : Fragment() {
         })
     }
 
-    private fun updateData(results: List<Result>) {
+    private fun updateData(movieResultResponses: List<MovieResultResponses>) {
         binding.recView.adapter = adapter
-        adapter.setData(results)
+        adapter.setData(movieResultResponses)
     }
 }

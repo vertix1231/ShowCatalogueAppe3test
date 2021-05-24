@@ -3,7 +3,7 @@ package com.topanlabs.filmtopan.data
 
 import com.google.gson.annotations.SerializedName
 
-data class FilmDetailData(
+data class MovieDetailData(
     @SerializedName("adult")
     val adult: Boolean,
     @SerializedName("backdrop_path")
