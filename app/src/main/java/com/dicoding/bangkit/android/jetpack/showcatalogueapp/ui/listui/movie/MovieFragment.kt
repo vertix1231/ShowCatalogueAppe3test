@@ -10,9 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.FragmentMovieBinding
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.listui.ListViewModel
-import com.topanlabs.filmtopan.data.MovieResultResponses
-import com.topanlabs.filmtopan.data.MovieHead
-import com.topanlabs.filmtopan.utils.Status
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.MovieResultResponses
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.MovieHead
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Status
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 

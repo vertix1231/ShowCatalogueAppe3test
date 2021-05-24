@@ -1,11 +1,11 @@
-package com.topanlabs.filmtopan.di
+package com.dicoding.bangkit.android.jetpack.showcatalogueapp.di
 
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.detail.DetailViewModel
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.listui.ListViewModel
-import com.topanlabs.filmtopan.data.DataRepository
-import com.topanlabs.filmtopan.db.ShowtaimentDatabase
-import com.topanlabs.filmtopan.network.RetroBuilder
-import com.topanlabs.filmtopan.utils.EspressoIdlingResource
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.DataRepository
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentDatabase
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.network.RetroBuilder
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.EspressoIdlingResource
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

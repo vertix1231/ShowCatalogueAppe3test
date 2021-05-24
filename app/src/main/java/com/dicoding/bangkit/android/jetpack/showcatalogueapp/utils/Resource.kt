@@ -1,4 +1,4 @@
-package com.topanlabs.filmtopan.utils
+package com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils
 
 
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {

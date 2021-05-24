@@ -1,4 +1,4 @@
-package com.topanlabs.filmtopan
+package com.dicoding.bangkit.android.jetpack.showcatalogueapp
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

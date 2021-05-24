@@ -1,4 +1,4 @@
-package com.topanlabs.filmtopan.db
+package com.dicoding.bangkit.android.jetpack.showcatalogueapp.db
 
 import android.content.Context
 import androidx.room.Database

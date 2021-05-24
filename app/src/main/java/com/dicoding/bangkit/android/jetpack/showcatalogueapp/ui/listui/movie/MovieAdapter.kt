@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.ItemRowFilm2Binding
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.detail.DetailActivity
-import com.topanlabs.filmtopan.data.MovieResultResponses
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.MovieResultResponses
 
 
 

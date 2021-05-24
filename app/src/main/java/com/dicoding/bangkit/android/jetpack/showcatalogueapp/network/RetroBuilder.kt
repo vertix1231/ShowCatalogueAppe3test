@@ -1,4 +1,4 @@
-package com.topanlabs.filmtopan.network
+package com.dicoding.bangkit.android.jetpack.showcatalogueapp.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

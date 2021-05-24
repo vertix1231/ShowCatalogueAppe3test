@@ -1,12 +1,12 @@
-package com.topanlabs.filmtopan.data
+package com.dicoding.bangkit.android.jetpack.showcatalogueapp.data
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.topanlabs.filmtopan.db.ShowtaimentDao
-import com.topanlabs.filmtopan.db.ShowtaimentEntity
-import com.topanlabs.filmtopan.network.TmApi
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentDao
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntity
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.network.TmApi
 
 
 class DataRepository(private val tmApi: TmApi, private val showtaimentDao: ShowtaimentDao) {

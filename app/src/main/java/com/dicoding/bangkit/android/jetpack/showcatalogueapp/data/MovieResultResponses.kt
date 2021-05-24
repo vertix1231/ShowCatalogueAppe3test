@@ -1,4 +1,4 @@
-package com.topanlabs.filmtopan.data
+package com.dicoding.bangkit.android.jetpack.showcatalogueapp.data
 
 
 import com.google.gson.annotations.SerializedName

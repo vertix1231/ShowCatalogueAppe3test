@@ -1,6 +1,6 @@
-package com.topanlabs.filmtopan.network
+package com.dicoding.bangkit.android.jetpack.showcatalogueapp.network
 
-import com.topanlabs.filmtopan.data.*
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.*
 import retrofit2.http.GET
 import retrofit2.http.Path
 

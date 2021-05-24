@@ -5,12 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagedList
-import com.topanlabs.filmtopan.data.DataRepository
-import com.topanlabs.filmtopan.data.RatingTvshowData
-import com.topanlabs.filmtopan.data.RatingMovieData
-import com.topanlabs.filmtopan.db.ShowtaimentEntity
-import com.topanlabs.filmtopan.utils.EspressoIdlingResource
-import com.topanlabs.filmtopan.utils.Resource
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.DataRepository
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.RatingTvshowData
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.RatingMovieData
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntity
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.EspressoIdlingResource
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Resource
 import kotlinx.coroutines.launch
 
 

@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.ActivityMainBinding
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.favorite.FavoriteActivity
 import com.google.android.material.tabs.TabLayoutMediator
-import com.topanlabs.filmtopan.SectionsAdapter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

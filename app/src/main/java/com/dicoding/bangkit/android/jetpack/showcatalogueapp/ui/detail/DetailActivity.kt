@@ -9,10 +9,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.ActivityDetailBinding
-import com.topanlabs.filmtopan.data.MovieDetailData
-import com.topanlabs.filmtopan.data.TvDetailData
-import com.topanlabs.filmtopan.db.ShowtaimentEntity
-import com.topanlabs.filmtopan.utils.Status
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.MovieDetailData
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.TvDetailData
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntity
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Status
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

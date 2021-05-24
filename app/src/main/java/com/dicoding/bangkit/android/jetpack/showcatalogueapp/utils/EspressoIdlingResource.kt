@@ -1,4 +1,4 @@
-package com.topanlabs.filmtopan.utils
+package com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils
 
 import androidx.test.espresso.idling.CountingIdlingResource
 
