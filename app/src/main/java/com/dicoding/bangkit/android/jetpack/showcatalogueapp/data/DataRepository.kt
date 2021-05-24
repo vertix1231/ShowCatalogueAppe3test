@@ -8,9 +8,7 @@ import com.topanlabs.filmtopan.db.ShowtaimentDao
 import com.topanlabs.filmtopan.db.ShowtaimentEntity
 import com.topanlabs.filmtopan.network.TmApi
 
-/**
- * Created by taufan-mft on 5/1/2021.
- */
+
 class DataRepository(private val tmApi: TmApi, private val showtaimentDao: ShowtaimentDao) {
     suspend fun getFilms() = tmApi.getMovies()
     suspend fun getTvs() = tmApi.getTvs()
@@ -18,6 +16,7 @@ class DataRepository(private val tmApi: TmApi, private val showtaimentDao: Showt
     suspend fun getTvDetail(tvID: Int) = tmApi.getTvDetail(tvID)
     suspend fun getFilmRating(movieID: Int) = tmApi.getFilmRating(movieID)
     suspend fun getTvRating(tvID: Int) = tmApi.getTvRating(tvID)
+    @Suppress("DEPRECATION")
     fun allLikedArts(type: String): LiveData<PagedList<ShowtaimentEntity>> =
         LivePagedListBuilder(showtaimentDao.getFavoriteList(type), 20).build()
 

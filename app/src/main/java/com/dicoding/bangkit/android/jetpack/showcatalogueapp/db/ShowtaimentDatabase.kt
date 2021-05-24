@@ -19,7 +19,7 @@ abstract class ShowtaimentDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     ShowtaimentDatabase::class.java,
-                    "art_database"
+                    "showtaimentvertix_database"
                 ).allowMainThreadQueries().build()
                 INSTANCE = instance
                 // return instance

@@ -13,9 +13,7 @@ import com.topanlabs.filmtopan.utils.EspressoIdlingResource
 import com.topanlabs.filmtopan.utils.Resource
 import kotlinx.coroutines.launch
 
-/**
- * Created by taufan-mft on 4/19/2021.
- */
+
 @Suppress("DEPRECATION")
 class DetailViewModel(val repository: DataRepository, val espresso: EspressoIdlingResource) : ViewModel() {
     val selectedFilm = MutableLiveData<Resource<Any>>()

@@ -7,7 +7,7 @@ import androidx.room.*
 @Dao
 interface ShowtaimentDao {
     companion object {
-        const val TABLE_NAME = "art_table"
+        const val TABLE_NAME = "showtaiment_table"
     }
 
     @Query("SELECT * FROM $TABLE_NAME WHERE type =:type")

@@ -1,8 +1,6 @@
 package com.topanlabs.filmtopan.utils
 
-/**
- * Created by taufan-mft on 5/1/2021.
- */
+
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
     companion object {
         fun <T> success(data: T): Resource<T> =
