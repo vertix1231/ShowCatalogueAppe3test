@@ -165,11 +165,11 @@ dependencies {
     implementation "androidx.navigation:navigation-compose:2.4.0-alpha01"
 
     // Koin main features for Android (Scope,ViewModel ...)
-    implementation "io.insert-koin:koin-android:3.0.1"
+    implementation "io.insert-koin:koin-android:3.0.2"
 // Koin Android - experimental builder extensions
-    implementation "io.insert-koin:koin-android-ext:3.0.1"
+    implementation "io.insert-koin:koin-android-ext:3.0.2"
 // Koin for Jetpack WorkManager
-    implementation "io.insert-koin:koin-androidx-workmanager:3.0.1"
+    implementation "io.insert-koin:koin-androidx-workmanager:3.0.2"
 // Koin for Jetpack Compose (unstable version)
     implementation "io.insert-koin:koin-androidx-compose:3.0.1"
 

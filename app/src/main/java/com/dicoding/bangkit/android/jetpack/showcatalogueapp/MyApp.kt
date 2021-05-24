@@ -5,6 +5,7 @@ import com.dicoding.bangkit.android.jetpack.showcatalogueapp.di.Koin.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 
 
 class MyApp : Application() {
@@ -12,6 +13,7 @@ class MyApp : Application() {
 
         // Start Koin
         startKoin {
+            androidLogger(Level.NONE)
             androidLogger()
             androidContext(this@MyApp)
             modules(appModule)

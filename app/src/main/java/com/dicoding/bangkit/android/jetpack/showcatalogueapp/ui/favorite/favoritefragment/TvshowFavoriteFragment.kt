@@ -14,8 +14,8 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 class TvshowFavoriteFragment : Fragment() {
 
     private lateinit var binding: FragmentTvshowFavoriteBinding
-    val viewModel: DetailViewModel by sharedViewModel()
-    val adapterFavorite = FavoriteAdapter()
+    private val viewModel: DetailViewModel by sharedViewModel()
+    private val adapterFavorite = FavoriteAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -19,7 +19,8 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 class MovieFragment : Fragment() {
 
     private lateinit var binding: FragmentMovieBinding
-    val viewModel: ListViewModel by sharedViewModel()
+    private val viewModel: ListViewModel by sharedViewModel()
+//    private lateinit var adapter : MovieAdapter
     var adapter = MovieAdapter()
 
     override fun onCreateView(
