@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dicoding.bangkit.android.jetpack.showcatalogueapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -12,8 +14,8 @@
         android:theme="@style/Theme.ShowCatalogueApp">
         <activity android:name=".ui.favorite.FavoriteActivity"></activity>
         <activity android:name=".ui.detail.DetailActivity" />
-        <activity android:name=".splashscreen.SplashScreenShowtaimentActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".splashscreen.SplashScreenShowtaimentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
