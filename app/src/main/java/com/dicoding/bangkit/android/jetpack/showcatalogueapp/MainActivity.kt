@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         val sectionsAdapter = SectionsAdapter(this)
         viewPager.adapter = sectionsAdapter
         val tabs = binding.tabLayout
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()

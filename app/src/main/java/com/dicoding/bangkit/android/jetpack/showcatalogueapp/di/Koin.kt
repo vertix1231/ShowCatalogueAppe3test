@@ -13,10 +13,10 @@ import org.koin.dsl.module
 object Koin {
     val appModule = module {
 
-        single<DataRepository> { DataRepository(get(), get()) }
+        single { DataRepository(get(), get()) }
         single { RetroBuilder.tmApi }
         single { EspressoIdlingResource() }
-        single { ShowtaimentDatabase.getDatabase(get()).artDao() }
+        single { ShowtaimentDatabase.getDatabase(get()).showtaimentDao() }
         viewModel { ListViewModel(get(), get()) }
         viewModel { DetailViewModel(get(), get()) }
     }

@@ -15,6 +15,7 @@ import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntit
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Status
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailActivity : AppCompatActivity() {
     companion object {
@@ -25,8 +26,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityDetailBinding
-//    val viewModel: DetailViewModel by viewModel()
-    private lateinit var viewModel: DetailViewModel
+    private val viewModel: DetailViewModel by viewModel()
     private lateinit var typeS: String
     private var isLiked = false
 

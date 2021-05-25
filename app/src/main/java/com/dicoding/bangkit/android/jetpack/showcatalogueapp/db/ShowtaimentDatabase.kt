@@ -6,9 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [ShowtaimentEntity::class], version = 1, exportSchema = false)
+@Database(entities = [ShowtaimentEntity::class], version = 2, exportSchema = false)
 abstract class ShowtaimentDatabase : RoomDatabase() {
-    abstract fun artDao(): ShowtaimentDao
+    abstract fun showtaimentDao(): ShowtaimentDao
 
     companion object {
         @Volatile

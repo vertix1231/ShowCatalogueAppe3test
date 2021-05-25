@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 data class RatingTvshowData(
     @SerializedName("id")
     val id: Int,
-    @SerializedName("movieResultResponses")
+    @SerializedName("results")
     val results: List<Result>
 ) {
     data class Result(
