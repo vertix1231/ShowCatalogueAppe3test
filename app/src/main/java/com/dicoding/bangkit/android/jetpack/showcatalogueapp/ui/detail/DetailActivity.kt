@@ -41,7 +41,7 @@ class DetailActivity : AppCompatActivity() {
         if (type == ID_FILM) {
             typeS = "film"
             changeVisibility(View.GONE)
-            supportActionBar?.title = "Detail Film"
+            supportActionBar?.title = "Detail Movie"
             intent.getIntExtra(ID_TAG, 0).let {
                 viewModel.setFilm(it)
                 viewModel.selectedFilm.observe(this, Observer {

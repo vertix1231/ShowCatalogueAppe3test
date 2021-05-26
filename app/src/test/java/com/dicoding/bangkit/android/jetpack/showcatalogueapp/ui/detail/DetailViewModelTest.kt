@@ -76,7 +76,7 @@ class DetailViewModelTest : KoinTest{
     private val dao = Mockito.mock(ShowtaimentDao::class.java)
 
     @Test
-    fun allLikedArts() {
+    fun allLikedTaiment() {
         val dataSourceFactory =
             Mockito.mock(DataSource.Factory::class.java) as DataSource.Factory<Int, ShowtaimentEntity>
         Mockito.`when`(dao.getFavoriteList("tv")).thenReturn(dataSourceFactory)
@@ -157,8 +157,8 @@ class DetailViewModelTest : KoinTest{
         val expectedRating = "R"
         runBlocking {
             val filmRating = detailViewModel.getFilmRating(movieId)
-            Assert.assertNotNull(filmRating)
-            Assert.assertEquals(expectedRating, filmRating)
+            assertNotNull(filmRating)
+            assertEquals(expectedRating, filmRating)
         }
     }
 
@@ -168,8 +168,8 @@ class DetailViewModelTest : KoinTest{
         val expectedRating = "TV-14"
         runBlocking {
             val tvRating = detailViewModel.getTvRating(tvId)
-            Assert.assertNotNull(tvRating)
-            Assert.assertEquals(expectedRating, tvRating)
+            assertNotNull(tvRating)
+            assertEquals(expectedRating, tvRating)
         }
     }
 }
