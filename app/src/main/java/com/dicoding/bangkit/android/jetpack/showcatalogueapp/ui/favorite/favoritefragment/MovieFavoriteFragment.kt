@@ -40,10 +40,10 @@ class MovieFavoriteFragment : Fragment() {
     }
 
     private fun loadData() {
-        viewModel.allLikedArts("film").observe(viewLifecycleOwner) { arts ->
-            arts.let { adapterFavorite.setData(arts) }
+        viewModel.allLikedArts("film").observe(viewLifecycleOwner) { showtaimentit ->
+            showtaimentit.let { adapterFavorite.setData(showtaimentit) }
             binding.progressBar.visibility = View.GONE
-            if (arts.loadedCount == 0) {
+            if (showtaimentit.loadedCount == 0) {
                 binding.recView.visibility = View.GONE
             } else {
                 binding.recView.visibility = View.VISIBLE

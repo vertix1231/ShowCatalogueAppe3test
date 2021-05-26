@@ -71,8 +71,8 @@ class FavoriteAdapter : PagedListAdapter<ShowtaimentEntity, FavoriteAdapter.Favo
     }
 
     override fun onBindViewHolder(holder: FavoriteViewHolder, position: Int) {
-        val art = list[position]
-        holder.bind(art)
+        val datalist = list[position]
+        holder.bind(datalist)
     }
 
     override fun getItemCount(): Int {
