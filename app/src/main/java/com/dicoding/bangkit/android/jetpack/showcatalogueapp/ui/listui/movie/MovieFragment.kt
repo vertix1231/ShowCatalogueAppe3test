@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.MovieHead
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.MovieResultResponses
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.FragmentMovieBinding
-import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.listui.ListViewModel
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.listui.ListHomeViewModel
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Status
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -18,7 +18,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 class MovieFragment : Fragment() {
 
     private lateinit var binding: FragmentMovieBinding
-    private val viewModel: ListViewModel by sharedViewModel()
+    private val homeViewModel: ListHomeViewModel by sharedViewModel()
 //    private lateinit var adapter : MovieAdapter
     var adapter = MovieAdapter()
 
@@ -46,8 +46,8 @@ class MovieFragment : Fragment() {
     }
 
     private fun setObservers() {
-        viewModel.getFilmku()
-        viewModel.films.observe(viewLifecycleOwner, {
+        homeViewModel.getFilmku()
+        homeViewModel.films.observe(viewLifecycleOwner, {
             it?.let { resource ->
                 when (resource.status) {
                     Status.SUCCESS -> {

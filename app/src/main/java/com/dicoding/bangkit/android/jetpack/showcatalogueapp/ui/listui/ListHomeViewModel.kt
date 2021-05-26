@@ -9,7 +9,7 @@ import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Resource
 import kotlinx.coroutines.launch
 
 
-class ListViewModel(private val repository: DataRepository, private val espresso: EspressoIdlingResource) : ViewModel() {
+class ListHomeViewModel(private val repository: DataRepository, private val espresso: EspressoIdlingResource) : ViewModel() {
 
     val films = MutableLiveData<Resource<Any>>()
     val tvs = MutableLiveData<Resource<Any>>()

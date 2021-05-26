@@ -1,7 +1,7 @@
 package com.dicoding.bangkit.android.jetpack.showcatalogueapp.di
 
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.detail.DetailViewModel
-import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.listui.ListViewModel
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.listui.ListHomeViewModel
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.DataRepository
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentDatabase
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.network.RetroBuilder
@@ -17,7 +17,7 @@ object Koin {
         single { RetroBuilder.tmApi }
         single { EspressoIdlingResource() }
         single { ShowtaimentDatabase.getDatabase(get()).showtaimentDao() }
-        viewModel { ListViewModel(get(), get()) }
+        viewModel { ListHomeViewModel(get(), get()) }
         viewModel { DetailViewModel(get(), get()) }
     }
 
