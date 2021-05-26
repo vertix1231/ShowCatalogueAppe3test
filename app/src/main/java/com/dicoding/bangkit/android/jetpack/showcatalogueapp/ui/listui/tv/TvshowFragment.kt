@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.TvShowHead
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.TvshowResultResponses
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.FragmentTvshowBinding
@@ -19,6 +20,7 @@ class TvshowFragment : Fragment() {
 
     private lateinit var binding: FragmentTvshowBinding
     private val homeViewModel: ListHomeViewModel by sharedViewModel()
+
 //    private lateinit var  adapter : TvAdapter
     var adapter = TvAdapter()
 
@@ -34,7 +36,8 @@ class TvshowFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if (activity != null) {
             with(binding.recView) {
-                layoutManager = GridLayoutManager(context, 2)
+//                layoutManager = GridLayoutManager(context, 2)
+                layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
                 this.adapter = adapter
             }

@@ -24,6 +24,7 @@ class TvAdapter : RecyclerView.Adapter<TvAdapter.TvViewHolder>() {
         fun bind(tv: TvshowResultResponses) {
             with(binding) {
                 tvYear.text = tv.firstAirDate.subSequence(0, 4)
+                tvDataTitle.text = tv.name
                 Glide
                     .with(imgView.context)
                     .load("https://image.tmdb.org/t/p/original/${tv.posterPath}")

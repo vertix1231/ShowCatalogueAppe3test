@@ -43,6 +43,7 @@ class FavoriteAdapter : PagedListAdapter<ShowtaimentEntity, FavoriteAdapter.Favo
         fun bind(item: ShowtaimentEntity) {
             with(binding) {
                 tvYear.text = item.year
+                tvDataTitle.text = item.title
                 Glide
                     .with(imgView.context)
                     .load(item.photo)

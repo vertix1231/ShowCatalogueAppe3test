@@ -8,7 +8,7 @@
     tools:viewBindingIgnore="true" >
 
     <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/img_data"
+        android:id="@+id/imgView"
         android:layout_width="100dp"
         android:layout_height="140dp"
         android:elevation="5dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0"
         app:riv_corner_radius="10dp"
-        android:src="@android:color/darker_gray" />
+        android:src="@drawable/poster_alita" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_item"
@@ -33,7 +33,7 @@
         app:cardElevation="-1dp"
         app:layout_constraintBottom_toTopOf="@id/card_shadow"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/img_data"
+        app:layout_constraintStart_toStartOf="@id/imgView"
         app:layout_constraintTop_toTopOf="@id/tv_data_title" />
 
     <View
@@ -67,16 +67,16 @@
         android:paddingTop="10dp"
         android:textColor="#000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_data_desc"
+        app:layout_constraintBottom_toTopOf="@+id/tvYear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@id/img_data"
+        app:layout_constraintStart_toEndOf="@id/imgView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:text="Data Name" />
 
     <TextView
-        android:id="@+id/tv_data_desc"
+        android:id="@+id/tvYear"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -86,7 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@id/img_data"
+        app:layout_constraintStart_toEndOf="@id/imgView"
         app:layout_constraintTop_toBottomOf="@+id/tv_data_title"
         tools:text="Description" />
 
