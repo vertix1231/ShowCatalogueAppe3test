@@ -257,7 +257,7 @@ class MainActivityTest : KoinTest{
     }
 
     @Test
-    fun loadFilms() {
+    fun  loadFilms() {
 
         Espresso.onView(withId(R.id.recView))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
