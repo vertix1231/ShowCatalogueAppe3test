@@ -2,7 +2,6 @@ package com.dicoding.bangkit.android.jetpack.showcatalogueapp.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentDao
 
 
 @Entity(tableName = ShowtaimentDao.TABLE_NAME)

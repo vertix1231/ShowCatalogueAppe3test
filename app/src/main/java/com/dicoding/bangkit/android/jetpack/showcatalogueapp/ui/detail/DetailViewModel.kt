@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagedList
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.DataRepository
-import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.RatingTvshowData
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.RatingMovieData
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.RatingTvshowData
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntity
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.EspressoIdlingResource
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Resource

@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.ItemRowFilm2Binding
-import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.detail.DetailActivity
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntity
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.detail.DetailActivity
 
 
 class FavoriteAdapter : PagedListAdapter<ShowtaimentEntity, FavoriteAdapter.FavoriteViewHolder>(

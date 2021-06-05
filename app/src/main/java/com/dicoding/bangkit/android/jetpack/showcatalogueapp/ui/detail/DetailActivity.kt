@@ -8,9 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
-import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.ActivityDetailBinding
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.MovieDetailData
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.TvDetailData
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.databinding.ActivityDetailBinding
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntity
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Status
 import kotlinx.coroutines.Dispatchers
