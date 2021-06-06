@@ -65,6 +65,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+
     //Roboelectirc
     testImplementation 'org.robolectric:robolectric:4.4'
 
@@ -89,7 +91,7 @@ dependencies {
     testImplementation 'org.mockito:mockito-inline:3.6.0'
 
 //recyclerview
-    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.cardview:cardview:1.0.0'
 
 // Rounded ImageView

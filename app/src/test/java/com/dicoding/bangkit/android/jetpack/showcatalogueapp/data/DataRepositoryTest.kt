@@ -1,19 +1,25 @@
 package com.dicoding.bangkit.android.jetpack.showcatalogueapp.data
 
-import android.os.Build
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.paging.DataSource
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentDao
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntity
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.di.Koin.appModule
 import com.nhaarman.mockitokotlin2.verify
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.*
 import org.junit.runner.RunWith
+import org.junit.runners.MethodSorters
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext
+import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 import org.koin.test.KoinTest
 import org.koin.test.get
 import org.mockito.Mockito
@@ -21,12 +27,14 @@ import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(RobolectricTestRunner::class)
-@Config(maxSdk = Build.VERSION_CODES.P, minSdk = Build.VERSION_CODES.P)
+@Config(sdk = [29])
+@ExperimentalCoroutinesApi
 class DataRepositoryTest : KoinTest{
     private lateinit var repository: DataRepository
     private val dispatcher = TestCoroutineDispatcher()
+
 
 
 
@@ -37,6 +45,12 @@ class DataRepositoryTest : KoinTest{
 
     @Before
     fun setUp() {
+        startKoin {
+            androidLogger(Level.NONE)
+            androidLogger()
+//            androidContext()
+            modules(appModule)
+        }
         Dispatchers.setMain(dispatcher)
         repository = DataRepository(get(), dao)
         MockitoAnnotations.initMocks(this)
