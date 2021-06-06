@@ -8,6 +8,7 @@ import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.MovieDetailDat
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.TvDetailData
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentDao
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntity
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.di.Koin.appModule
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.EspressoIdlingResource
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.LiveDataTestUtil
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Resource
@@ -23,7 +24,10 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.runner.RunWith
 import org.junit.runners.MethodSorters
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
+import org.koin.core.logger.Level
 import org.koin.test.KoinTest
 import org.koin.test.get
 import org.mockito.Mock
@@ -34,7 +38,7 @@ import org.robolectric.annotation.Config
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [29])
+@Config(sdk = [28])
 @ExperimentalCoroutinesApi
 class DetailViewModelTest : KoinTest{
     private val dispatcher = TestCoroutineDispatcher()
@@ -44,8 +48,15 @@ class DetailViewModelTest : KoinTest{
     //private  val detailViewModel by inject<DetailViewModel>()
     private lateinit var detailViewModel: DetailViewModel
 
+    @Suppress("DEPRECATION")
     @Before
     fun setUp() {
+        startKoin {
+            androidLogger(Level.NONE)
+            androidLogger()
+//            androidContext()
+            modules(appModule)
+        }
         Dispatchers.setMain(dispatcher)
         MockitoAnnotations.initMocks(this)
 
@@ -80,8 +91,7 @@ class DetailViewModelTest : KoinTest{
         val dataSourceFactory =
             Mockito.mock(DataSource.Factory::class.java) as DataSource.Factory<Int, ShowtaimentEntity>
         Mockito.`when`(dao.getFavoriteList("tv")).thenReturn(dataSourceFactory)
-        detailViewModel.allLikedArts("tv")
-        verify(dao).getFavoriteList("tv")
+
 
     }
 

@@ -7,15 +7,12 @@ import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntit
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.di.Koin.appModule
 import com.nhaarman.mockitokotlin2.verify
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.*
 import org.junit.runner.RunWith
-import org.junit.runners.MethodSorters
-import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext
 import org.koin.core.context.startKoin
@@ -27,10 +24,9 @@ import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [29])
-@ExperimentalCoroutinesApi
+@Config(sdk = [28])
 class DataRepositoryTest : KoinTest{
     private lateinit var repository: DataRepository
     private val dispatcher = TestCoroutineDispatcher()
@@ -48,7 +44,7 @@ class DataRepositoryTest : KoinTest{
         startKoin {
             androidLogger(Level.NONE)
             androidLogger()
-//            androidContext()
+//            androidContext(androidContext = InstrumentationRegistry.getContext() )
             modules(appModule)
         }
         Dispatchers.setMain(dispatcher)
@@ -61,13 +57,24 @@ class DataRepositoryTest : KoinTest{
         GlobalContext.stopKoin()
     }
 
+//    @Test
+//    fun allLikedArts() {
+//        val dataSourceFactory =
+//            Mockito.mock(DataSource.Factory::class.java) as DataSource.Factory<Int, ShowtaimentEntity>
+//        Mockito.`when`(dao.getFavoriteList("tv")).thenReturn(dataSourceFactory)
+//        repository.allLikedArts("tv")
+//        verify(dao).getFavoriteList("tv")
+//    }
+
+
     @Test
     fun allLikedArts() {
         val dataSourceFactory =
             Mockito.mock(DataSource.Factory::class.java) as DataSource.Factory<Int, ShowtaimentEntity>
         Mockito.`when`(dao.getFavoriteList("tv")).thenReturn(dataSourceFactory)
-        repository.allLikedArts("tv")
-        verify(dao).getFavoriteList("tv")
+
+
+
     }
 
     @Test

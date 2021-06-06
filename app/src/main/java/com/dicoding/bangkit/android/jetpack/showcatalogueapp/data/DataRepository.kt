@@ -17,7 +17,7 @@ class DataRepository(private val tmApi: TmApi, private val showtaimentDao: Showt
     suspend fun getFilmRating(movieID: Int) = tmApi.getFilmRating(movieID)
     suspend fun getTvRating(tvID: Int) = tmApi.getTvRating(tvID)
     @Suppress("DEPRECATION")
-    fun allLikedArts(type: String): LiveData<PagedList<ShowtaimentEntity>> =
+    fun allLikedAShowtaiment(type: String): LiveData<PagedList<ShowtaimentEntity>> =
         LivePagedListBuilder(showtaimentDao.getFavoriteList(type), 20).build()
 
     @Suppress("RedundantSuspendModifier")

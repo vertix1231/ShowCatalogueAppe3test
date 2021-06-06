@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 class DetailViewModel(val repository: DataRepository, val espresso: EspressoIdlingResource) : ViewModel() {
     val selectedFilm = MutableLiveData<Resource<Any>>()
     val selectedTv = MutableLiveData<Resource<Any>>()
-    fun allLikedArts(type: String): LiveData<PagedList<ShowtaimentEntity>> = repository.allLikedArts(type)
+    fun allLikedArts(type: String): LiveData<PagedList<ShowtaimentEntity>> = repository.allLikedAShowtaiment(type)
 
     suspend fun isLiked(id: Int): Boolean {
         val count: Int = repository.searchArt(id)

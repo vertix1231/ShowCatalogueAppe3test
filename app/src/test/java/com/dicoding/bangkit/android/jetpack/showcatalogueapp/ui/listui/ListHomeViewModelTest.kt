@@ -5,6 +5,7 @@ import androidx.lifecycle.Observer
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.DataRepository
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.MovieHead
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.TvShowHead
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.di.Koin.appModule
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.EspressoIdlingResource
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.LiveDataTestUtil
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Resource
@@ -17,7 +18,10 @@ import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.*
 import org.junit.runner.RunWith
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
+import org.koin.core.logger.Level
 import org.koin.test.KoinTest
 import org.koin.test.inject
 import org.mockito.Mock
@@ -28,11 +32,11 @@ import kotlin.test.assertEquals
 
 @ExperimentalCoroutinesApi
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [29])
+@Config(sdk = [28])
 class ListHomeViewModelTest : KoinTest {
 
-    val repoReal by inject<DataRepository>()
-    val dispatcher = TestCoroutineDispatcher()
+    private val repoReal by inject<DataRepository>()
+    private val dispatcher = TestCoroutineDispatcher()
 
 
     @get:Rule
@@ -49,8 +53,15 @@ class ListHomeViewModelTest : KoinTest {
     @Mock
     private lateinit var espresso: EspressoIdlingResource
 
+    @Suppress("DEPRECATION")
     @Before
     fun setUp() {
+        startKoin {
+            androidLogger(Level.NONE)
+            androidLogger()
+//            androidContext()
+            modules(appModule)
+        }
         Dispatchers.setMain(dispatcher)
         MockitoAnnotations.initMocks(this)
         listViewModel = ListHomeViewModel(repoReal, espresso)
@@ -64,7 +75,6 @@ class ListHomeViewModelTest : KoinTest {
 
     @Test
     fun getFilm() {
-
 
         val films: MovieHead = runBlocking { repoReal.getFilms() }
         val resources = Resource.success(data = films)
