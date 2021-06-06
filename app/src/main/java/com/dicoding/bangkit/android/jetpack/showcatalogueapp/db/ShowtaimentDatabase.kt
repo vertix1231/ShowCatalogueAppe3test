@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [ShowtaimentEntity::class], version = 2, exportSchema = false)
+@Database(entities = [ShowtaimentEntity::class], version = 3, exportSchema = false)
 abstract class ShowtaimentDatabase : RoomDatabase() {
     abstract fun showtaimentDao(): ShowtaimentDao
 
@@ -17,7 +17,7 @@ abstract class ShowtaimentDatabase : RoomDatabase() {
         fun getDatabase(context: Context): ShowtaimentDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
-                    context.applicationContext,
+                    context,
                     ShowtaimentDatabase::class.java,
                     "showtaimentvertix_database"
                 ).allowMainThreadQueries().build()

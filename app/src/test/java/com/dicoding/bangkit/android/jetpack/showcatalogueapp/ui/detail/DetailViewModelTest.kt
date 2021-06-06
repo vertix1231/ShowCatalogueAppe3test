@@ -3,12 +3,12 @@ package com.dicoding.bangkit.android.jetpack.showcatalogueapp.ui.detail
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import androidx.paging.DataSource
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.KointTestModule.appModuleTest
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.DataRepository
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.MovieDetailData
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.data.TvDetailData
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentDao
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntity
-import com.dicoding.bangkit.android.jetpack.showcatalogueapp.di.Koin.appModule
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.EspressoIdlingResource
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.LiveDataTestUtil
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.utils.Resource
@@ -44,7 +44,6 @@ class DetailViewModelTest : KoinTest{
     private val dispatcher = TestCoroutineDispatcher()
     private lateinit var realRepo: DataRepository
     private lateinit var spyedRepo: DataRepository
-
     //private  val detailViewModel by inject<DetailViewModel>()
     private lateinit var detailViewModel: DetailViewModel
 
@@ -55,7 +54,7 @@ class DetailViewModelTest : KoinTest{
             androidLogger(Level.NONE)
             androidLogger()
 //            androidContext()
-            modules(appModule)
+            modules(appModuleTest)
         }
         Dispatchers.setMain(dispatcher)
         MockitoAnnotations.initMocks(this)

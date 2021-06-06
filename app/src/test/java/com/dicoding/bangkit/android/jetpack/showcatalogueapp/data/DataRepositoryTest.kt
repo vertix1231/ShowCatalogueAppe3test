@@ -2,9 +2,9 @@ package com.dicoding.bangkit.android.jetpack.showcatalogueapp.data
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.paging.DataSource
+import com.dicoding.bangkit.android.jetpack.showcatalogueapp.KointTestModule.appModuleTest
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentDao
 import com.dicoding.bangkit.android.jetpack.showcatalogueapp.db.ShowtaimentEntity
-import com.dicoding.bangkit.android.jetpack.showcatalogueapp.di.Koin.appModule
 import com.nhaarman.mockitokotlin2.verify
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -39,13 +39,14 @@ class DataRepositoryTest : KoinTest{
 
     private val dao = Mockito.mock(ShowtaimentDao::class.java)
 
+    @Suppress("DEPRECATION")
     @Before
     fun setUp() {
         startKoin {
             androidLogger(Level.NONE)
             androidLogger()
 //            androidContext(androidContext = InstrumentationRegistry.getContext() )
-            modules(appModule)
+            modules(appModuleTest)
         }
         Dispatchers.setMain(dispatcher)
         repository = DataRepository(get(), dao)
@@ -57,14 +58,6 @@ class DataRepositoryTest : KoinTest{
         GlobalContext.stopKoin()
     }
 
-//    @Test
-//    fun allLikedArts() {
-//        val dataSourceFactory =
-//            Mockito.mock(DataSource.Factory::class.java) as DataSource.Factory<Int, ShowtaimentEntity>
-//        Mockito.`when`(dao.getFavoriteList("tv")).thenReturn(dataSourceFactory)
-//        repository.allLikedArts("tv")
-//        verify(dao).getFavoriteList("tv")
-//    }
 
 
     @Test
@@ -72,7 +65,6 @@ class DataRepositoryTest : KoinTest{
         val dataSourceFactory =
             Mockito.mock(DataSource.Factory::class.java) as DataSource.Factory<Int, ShowtaimentEntity>
         Mockito.`when`(dao.getFavoriteList("tv")).thenReturn(dataSourceFactory)
-
 
 
     }
